@@ -1,0 +1,8 @@
+{
+  "info":{
+      "title":"Movie Api",
+      "version":"2.0.0"
+  }
+,
+"apis":["index.js"]
+}
