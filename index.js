@@ -2,27 +2,19 @@ import express from "express";
 import bodyParser from "body-parser";
 import movieRoutes from "./routers/movie.js"
 import { version } from "uuid";
-import swaggerUi from 'swagger-ui-express'
-import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger.json';
+
 
 
 const app=express();
 const PORT=3001;
 
-const options = {
-    definition: {
-      openapi: '3.0.0',
-      info: {
-        title: 'Hello World',
-        version: '1.0.0',
-      },
-    },
-    apis: ['./src/routes*.js'], // files containing annotations as above
-  };
-  
-const swaggerSpec = swaggerJsdoc(options);
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));;
+  
+
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 
